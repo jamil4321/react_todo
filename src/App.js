@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AppNavbar from './components/AppNabar'
+import BookList from './components/BookList'
+import {Provider} from 'react-redux';
+import {Container} from 'reactstrap';
+import store from './ReduxApi/Store';
+import AddBookModal from './components/AddBookModal';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+     <Provider store={store}>
+        <AppNavbar/>
+        <Container>
+        <AddBookModal/>
+        <BookList/>
+        </Container>
+     </Provider>
+    )
+  }
 }
 
-export default App;
+export default App
