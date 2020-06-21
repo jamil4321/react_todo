@@ -1,6 +1,6 @@
 import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING, UPDATE_ITEM } from './type';
 import axios from 'axios';
-const url = 'http://localhost:8000'
+const url = 'http://mongor3api.herokuapp.com/'
 
 
 export const getItems = () => dispatch => {
